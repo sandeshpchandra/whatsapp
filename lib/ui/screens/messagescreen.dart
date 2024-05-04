@@ -31,7 +31,7 @@ class _MessageScreenState extends State<MessageScreen> {
               backgroundImage: AssetImage("assets/model4.jpg"),
             ),
             SizedBox(
-              width: 10,
+              width: 5,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class _MessageScreenState extends State<MessageScreen> {
                   "Sandesh P Chandra",
                   style: Theme.of(context)
                       .textTheme
-                      .titleMedium
+                      .titleSmall
                       ?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -55,14 +55,25 @@ class _MessageScreenState extends State<MessageScreen> {
           ],
         ),
         actions: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              IconButton(
-                  onPressed: () {}, icon: Icon(Icons.video_call_outlined)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.phone)),
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.video_call_outlined,
+                    size: 30,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                GestureDetector(onTap: () {}, child: Icon(Icons.phone)),
+              ],
+            ),
           )
         ],
       ),
