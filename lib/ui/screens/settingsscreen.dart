@@ -75,48 +75,48 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       color: Colors.white,
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Row(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(50),
-                                  child: Container(
-                                    height: 70,
-                                    width: 70,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(90)),
-                                    child: Image.asset(
-                                      "assets/model4.jpg",
-                                      fit: BoxFit.fill,
-                                    ),
+                          Row(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(90)),
+                                  child: Image.asset(
+                                    "assets/model4.jpg",
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Sandesh P Chandran",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleLarge,
-                                    ),
-                                    Text("we were bor to be real,....")
-                                  ],
-                                ),
-                                Spacer(),
-                                IconButton(
-                                    onPressed: () {}, icon: Icon(Icons.qr_code))
-                              ],
-                            ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Sandesh P Chandran",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold),
+                                  ),
+                                  Text("we were bor to be real,....")
+                                ],
+                              ),
+                              Spacer(),
+                              IconButton(
+                                  onPressed: () {}, icon: Icon(Icons.qr_code))
+                            ],
                           ),
                           Divider(
                             thickness: 1,
@@ -295,14 +295,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
 class SettingsWidget extends StatelessWidget {
   final String label;
-  final IconData icon;
+  final IconData? icon;
   final IconData icon1;
+  final VoidCallback? onPressed;
 
   const SettingsWidget({
     super.key,
     required this.label,
-    required this.icon,
+    this.icon,
     required this.icon1,
+    this.onPressed,
   });
 
   @override

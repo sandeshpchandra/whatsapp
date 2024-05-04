@@ -71,6 +71,10 @@ flutter:
     - assets/gridimage6.jpeg
     - assets/gridimage7.jpeg
     - assets/gridimage8.jpeg
+    - assets/whatsapp.jpg
+    - assets/whatsapp1.jpeg
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -3,7 +3,9 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'callscreen.dart';
 import 'chatscreen.dart';
+import 'communitiesscreen.dart';
 import 'settingsscreen.dart';
+import 'statusscreen.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({super.key});
@@ -15,21 +17,9 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   int selectedIndex = 3;
   static List<Widget> screens = [
-    Container(
-      color: Colors.red,
-      child: Text(
-        "index 1",
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
+    StatusScreen(),
     CallScreen(),
-    Container(
-      color: Colors.black,
-      child: Text(
-        "index 3",
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
+    CommunitiesScreen(),
     ChatScreen(),
     SettingsScreen()
   ];
@@ -45,7 +35,7 @@ class _IndexPageState extends State<IndexPage> {
             activeColor: Colors.black,
             padding: EdgeInsets.all(10),
             gap: 5,
-            iconSize: 30,
+            iconSize: 25,
             tabs: const [
               GButton(
                 icon: Icons.donut_large_sharp,

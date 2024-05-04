@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_project/ui/screens/messagescreen.dart';
 
 import 'indexpage.dart';
 
@@ -72,6 +73,12 @@ class ChatScreen extends StatelessWidget {
             ),
             itemCount: 10,
             itemBuilder: (BuildContext context, int index) => ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MessageScreen()));
+              },
               leading: CircleAvatar(
                 radius: 30,
                 backgroundImage: AssetImage(discovery[index]["image"]),
